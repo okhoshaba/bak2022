@@ -7,4 +7,7 @@ For Програмна система обліку поставок запасн
 
 http://localhost:8080/dovidnik/index.html
 
+https://github.com/knoldus/lagom-java-crud
+
+
 
