@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+      <h2>Базова програмна частина з інтерфейсом користувача (для експерта)</h2>
+        <form action="#" th:action="@{/}" th:object="${userInterface}" method="post">
+            <table>
+                <tr>
+                    <td>Номер експертизи:</td>
+                    <td><input type="text" th:field="*{idRecord}" /></td>
+                    <td th:if="${#fields.hasErrors('idRecord')}" th:errors="*{idRecord}">idRecord Error</td>
+                </tr>
+                <tr>
+                    <td>Порядковий номер комерційного експерта:</td>
+                    <td><input type="text" th:field="*{expertNumber}" /></td>
+                    <td th:if="${#fields.hasErrors('expertNumber')}" th:errors="*{expertNumber}">expertNumber Error</td>
+                </tr>
+                <tr>
+                    <td>Порядковий номер комерційного критерію:</td>
+                    <td><input type="text" th:field="*{kriteriyNumber}" /></td>
+                    <td th:if="${#fields.hasErrors('kriteriyNumber')}" th:errors="*{kriteriyNumber}">kriteriyNumber Error</td>
+                </tr>
+                <tr>
+                    <td>Порядковий номер оцінюваного учасника:</td>
+                    <td><input type="text" th:field="*{participantNumber}" /></td>
+                    <td th:if="${#fields.hasErrors('participantNumber')}" th:errors="*{participantNumber}">participantNumber Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Ввести значення</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
