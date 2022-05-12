@@ -1,0 +1,34 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+      <h2>Модуль планування необхідних запасів лікарських засобів</h2>
+        <form action="#" th:action="@{/}" th:object="${drugPlanningForm}" method="post">
+            <table>
+                <tr>
+                    <td>Номер реєстрації:</td>
+                    <td><input type="text" th:field="*{idRegistr}" /></td>
+                    <td th:if="${#fields.hasErrors('idRegistr')}" th:errors="*{idRegistr}">idRegistr Error</td>
+                </tr>
+                <tr>
+                    <td>Назва лікарського засобу:</td>
+                    <td><input type="text" th:field="*{drugName}" /></td>
+                    <td th:if="${#fields.hasErrors('drugName')}" th:errors="*{drugName}">drugName Error</td>
+                </tr>
+                <tr>
+                    <td>Планування обсягу запасу лікарського засобу:</td>
+                    <td><input type="text" th:field="*{drugCapacity}" /></td>
+                    <td th:if="${#fields.hasErrors('drugCapacity')}" th:errors="*{drugCapacity}">drugCapacity Error</td>
+                </tr>
+                <tr>
+                    <td>Планування місця збереження лікарського засобу:</td>
+                    <td><input type="text" th:field="*{drugPlace}" /></td>
+                    <td th:if="${#fields.hasErrors('drugPlace')}" th:errors="*{drugPlace}">drugPlace Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Ввести значення</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
+
