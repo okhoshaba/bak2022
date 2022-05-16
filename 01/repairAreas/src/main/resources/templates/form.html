@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <body>
+      <h2>Програмна система обліку поставок запасних частин</h2>
+      <h3>Замовлення до ремонтної ділянки</h3>
+        <form action="#" th:action="@{/}" th:object="${repairAreasForm}" method="post">
+            <table>
+                <tr>
+                    <td>Номер замовлення:</td>
+                    <td><input type="text" th:field="*{orderNumber}" /></td>
+                    <td th:if="${#fields.hasErrors('orderNumber')}" th:errors="*{orderNumber}">OrderNumber Error</td>
+                </tr>
+                <tr>
+                    <td>Номер (назва) ділянки:</td>
+                    <td><input type="text" th:field="*{areasName}" /></td>
+                    <td th:if="${#fields.hasErrors('areasName')}" th:errors="*{areasName}">AreasName Error</td>
+                </tr>
+                <tr>
+                    <td>Назва запасної частини:</td>
+                    <td><input type="text" th:field="*{nameSparePart}" /></td>
+                    <td th:if="${#fields.hasErrors('nameSparePart')}" th:errors="*{nameSparePart}">NameSparePart Error</td>
+                </tr>
+                <tr>
+                    <td>Ціна запасної частини:</td>
+                    <td><input type="text" th:field="*{price}" /></td>
+                    <td th:if="${#fields.hasErrors('price')}" th:errors="*{price}">Price Error</td>
+                </tr>
+                <tr>
+                    <td>Кількість:</td>
+                    <td><input type="text" th:field="*{numbers}" /></td>
+                    <td th:if="${#fields.hasErrors('numbers')}" th:errors="*{numbers}">Numbers Error</td>
+                </tr>
+                <tr>
+                    <td><button type="submit">Ввести дані</button></td>
+                </tr>
+            </table>
+        </form>
+    </body>
+</html>
